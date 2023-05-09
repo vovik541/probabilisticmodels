@@ -60,6 +60,26 @@ public class CalculationService {
         return dispersion;
     }
 
+    public double getFixedDispersion(LinkedHashMap<Integer, Integer> sortedData, int totalCount) {
+        double dispersion;
+
+        double all = 0;
+        for (Map.Entry<Integer, Integer> entry : sortedData.entrySet()) {
+            all += entry.getKey() * entry.getValue();
+        }
+        double middle = all / totalCount;
+
+        double upper = 0;
+
+        for (Map.Entry<Integer, Integer> entry : sortedData.entrySet()) {
+            upper += Math.pow(entry.getKey() - middle, 2) * entry.getValue();
+        }
+
+        dispersion = upper / (totalCount - 1);
+        return dispersion;
+    }
+
+
     public double getMeanSquareDeviation(double dispersion) {
         return Math.sqrt(dispersion);
     }
@@ -79,7 +99,7 @@ public class CalculationService {
                     histogram.put(currentStepNumber, 1);
                 }
             } else {
-                while (entry.getKey() > currentStep){
+                while (entry.getKey() > currentStep) {
                     currentStep += h;
                     currentStepNumber++;
                 }
@@ -90,10 +110,10 @@ public class CalculationService {
         return histogram;
     }
 
-    public double countStep(LinkedHashMap<Integer, Integer> data, int count){
+    public double countStep(LinkedHashMap<Integer, Integer> data, int count) {
         List<Map.Entry<Integer, Integer>> entries =
                 new ArrayList<>(data.entrySet());
 
-        return  (entries.get(entries.size() - 1).getKey() - entries.get(0).getKey()) / Math.sqrt(count);
+        return (entries.get(entries.size() - 1).getKey() - entries.get(0).getKey()) / Math.sqrt(count);
     }
 }
