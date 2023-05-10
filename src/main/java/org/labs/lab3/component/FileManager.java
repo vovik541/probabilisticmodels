@@ -1,7 +1,10 @@
 package org.labs.lab3.component;
 
 import java.io.*;
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 import static org.labs.util.FilePathManager.getFilePath;
 
@@ -12,7 +15,7 @@ public class FileManager {
     private final String outputFile;
 
     public FileManager() {
-        this.inputFile = getFilePath("input_10.txt", "lab3\\input");
+        this.inputFile = getFilePath("input_100.txt", "lab3\\input");
         this.outputFile = getFilePath("output.txt", "lab3\\output");
     }
 
@@ -47,6 +50,7 @@ public class FileManager {
 
         return input;
     }
+
     public int readFirstNumberFromFile() {
         try (Scanner scanner = new Scanner(new File(inputFile))) {
             return scanner.nextInt();
@@ -54,6 +58,7 @@ public class FileManager {
             throw new RuntimeException(e);
         }
     }
+
     public void printToFile(String message, double num, boolean append) {
         try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, append)))) {
 
@@ -62,6 +67,7 @@ public class FileManager {
             throw new RuntimeException(e);
         }
     }
+
     public void printToFile(String message, boolean append) {
         try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, append)))) {
 
@@ -70,14 +76,16 @@ public class FileManager {
             throw new RuntimeException(e);
         }
     }
+
     public void printToFile(String message, float num, boolean append) {
         try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, append)))) {
 
-            out.println("\n" + message +String.format("%4.2f", num)+" \n");
+            out.println("\n" + message + String.format("%4.2f", num) + " \n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
     public void saveScatterDiagram(LinkedHashMap<Integer, LinkedList<Float>> sortedInput) {
         try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, false)))) {
             out.println("\nScatter Diagram:\n");
@@ -113,9 +121,9 @@ public class FileManager {
 
             }
 
-            line = "     |" + "_".repeat((int)(rightest * 10)+4);
+            line = "     |" + "_".repeat((int) (rightest * 10) + 4);
             out.println(line);
-            line = "     |" + "    |".repeat((int)(rightest * 10) / 5 +1);
+            line = "     |" + "    |".repeat((int) (rightest * 10) / 5 + 1);
             out.println(line);
 
             line = "    ";

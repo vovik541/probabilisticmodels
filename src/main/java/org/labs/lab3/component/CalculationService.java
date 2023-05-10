@@ -43,10 +43,12 @@ public class CalculationService {
 
         return yOfGravity;
     }
+
     private float covariance = 0;
+
     public float findCovariance(LinkedHashMap<Integer, LinkedList<Float>> input, int numOfData) {
 
-        if (covariance == 0){
+        if (covariance == 0) {
             float middleX = findXOfGravity(input, numOfData);
             float middleY = findYOfGravity(input, numOfData);
 
@@ -61,7 +63,7 @@ public class CalculationService {
         return covariance;
     }
 
-    public String findEquationOfRegressionLine(LinkedHashMap<Integer, LinkedList<Float>> input, int numOfData){
+    public String findEquationOfRegressionLine(LinkedHashMap<Integer, LinkedList<Float>> input, int numOfData) {
         float midX = findXOfGravity(input, numOfData);
         float midY = findYOfGravity(input, numOfData);
         float covXY = findCovariance(input, numOfData);
@@ -70,10 +72,11 @@ public class CalculationService {
         float b1 = covXY / varX;
 
         float c = b1 * -midX + midY;
-        return String.format("y = %5.2f*x %s %2.2f", b1, (c > 0? "+" : "-" ) , c);
+        return String.format("y = %5.2f*x %s %2.2f", b1, (c > 0 ? "+" : "-"), c);
 
     }
-    public double findCorrelationCoefficient(LinkedHashMap<Integer, LinkedList<Float>> input, int numOfData){
+
+    public double findCorrelationCoefficient(LinkedHashMap<Integer, LinkedList<Float>> input, int numOfData) {
         float midX = findXOfGravity(input, numOfData);
         float midY = findYOfGravity(input, numOfData);
         float varX = findVarX(input, midX, numOfData);
@@ -85,7 +88,7 @@ public class CalculationService {
 
         for (Map.Entry<Integer, LinkedList<Float>> entry : input.entrySet()) {
             for (Float num : entry.getValue()) {
-                upperForm += ((num - midX)/sX)  * ((entry.getKey() - midY) / sY);
+                upperForm += ((num - midX) / sX) * ((entry.getKey() - midY) / sY);
             }
         }
 
@@ -93,21 +96,24 @@ public class CalculationService {
     }
 
     private float varX = 0;
-    public float findVarX(LinkedHashMap<Integer, LinkedList<Float>> input, float midX, int numOfData){
-        if (varX == 0){
+
+    public float findVarX(LinkedHashMap<Integer, LinkedList<Float>> input, float midX, int numOfData) {
+        if (varX == 0) {
             float midXAbc = midX * midX;
             for (Map.Entry<Integer, LinkedList<Float>> entry : input.entrySet()) {
                 for (Float num : entry.getValue()) {
                     varX += num * num;
                 }
             }
-            varX = (varX/ numOfData) - midXAbc;
+            varX = (varX / numOfData) - midXAbc;
         }
         return varX;
     }
+
     private float varY = 0;
-    public float findVarY(LinkedHashMap<Integer, LinkedList<Float>> input, float midY, int numOfData){
-        if (varY == 0){
+
+    public float findVarY(LinkedHashMap<Integer, LinkedList<Float>> input, float midY, int numOfData) {
+        if (varY == 0) {
             float midYAbc = midY * midY;
             for (Map.Entry<Integer, LinkedList<Float>> entry : input.entrySet()) {
                 for (Float num : entry.getValue()) {
@@ -118,6 +124,7 @@ public class CalculationService {
         }
         return varY;
     }
+
     public static <T, Q> LinkedHashMap<T, Q> reverseMap(LinkedHashMap<T, Q> toReverse) {
         LinkedHashMap<T, Q> reversedMap = new LinkedHashMap<>();
         List<T> reverseOrderedKeys = new ArrayList<>(toReverse.keySet());

@@ -32,7 +32,7 @@ public class SecondLab {
         fileManager.saveTrunkLeaves(input);
 
         int median = service.getMedian(input);
-        fileManager.saveBoxPlot(input, median, medium, input.get(input.size()-1), input.get(0), Q1, Q3);
+        fileManager.saveBoxPlot(input, median, medium, input.get(input.size() - 1), input.get(0), Q1, Q3);
 
     }
 }

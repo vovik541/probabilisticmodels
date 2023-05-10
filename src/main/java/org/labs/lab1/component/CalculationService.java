@@ -79,7 +79,7 @@ public class CalculationService {
                     histogram.put(currentStepNumber, 1);
                 }
             } else {
-                while (entry.getKey() > currentStep){
+                while (entry.getKey() > currentStep) {
                     currentStep += h;
                     currentStepNumber++;
                 }
@@ -90,12 +90,13 @@ public class CalculationService {
         return histogram;
     }
 
-    public double countStep(LinkedHashMap<Integer, Integer> data, int count){
+    public double countStep(LinkedHashMap<Integer, Integer> data, int count) {
         List<Map.Entry<Integer, Integer>> entries =
                 new ArrayList<>(data.entrySet());
 
-        return  (entries.get(entries.size() - 1).getKey() - entries.get(0).getKey()) / Math.sqrt(count);
+        return (entries.get(entries.size() - 1).getKey() - entries.get(0).getKey()) / Math.sqrt(count);
     }
+
     public double getFixedDispersion(LinkedHashMap<Integer, Integer> sortedData, int totalCount) {
         double dispersion;
 

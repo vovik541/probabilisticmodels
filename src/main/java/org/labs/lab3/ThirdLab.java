@@ -3,7 +3,8 @@ package org.labs.lab3;
 import org.labs.lab3.component.CalculationService;
 import org.labs.lab3.component.FileManager;
 
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 
 public class ThirdLab {
 
@@ -18,7 +19,7 @@ public class ThirdLab {
         float xOfGravity = service.findXOfGravity(input, numOfData);
         float yOfGravity = service.findYOfGravity(input, numOfData);
 
-        fileManager.printToFile("Center of Gravity: (" + xOfGravity+ ", " + yOfGravity+ ")", true);
+        fileManager.printToFile("Center of Gravity: (" + xOfGravity + ", " + yOfGravity + ")", true);
 
         float covariance = service.findCovariance(input, numOfData);
         fileManager.printToFile("Covariance: ", covariance, true);

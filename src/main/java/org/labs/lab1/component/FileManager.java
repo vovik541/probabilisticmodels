@@ -11,7 +11,7 @@ public class FileManager {
     private final String outputFile;
 
     public FileManager() {
-        this.inputFile = getFilePath("input_100.txt", "lab1\\input");
+        this.inputFile = getFilePath("input_43.txt", "lab1\\input");
         this.outputFile = getFilePath("output.txt", "lab1\\output");
     }
 
