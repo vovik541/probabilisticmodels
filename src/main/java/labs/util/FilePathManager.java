@@ -1,4 +1,4 @@
-package org.labs.util;
+package labs.util;
 
 import java.nio.file.Paths;
 

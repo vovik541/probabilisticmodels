@@ -1,4 +1,4 @@
-package org.labs.lab1.component;
+package labs.lab1.component;
 
 import java.util.*;
 
