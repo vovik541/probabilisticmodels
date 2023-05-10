@@ -46,9 +46,18 @@ public class FileManager {
         }
     }
 
+    public void printToFile(String message, boolean append) {
+        try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, append)))) {
+
+            out.println(message + " \n");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void saveBoxPlot(ArrayList<Integer> data, int median, double mean, int biggest, int smallest, double Q1, double Q3) {
         try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, true)))) {
-            out.println("\nBox Plot:\n");
+            out.println("\nBox Plot before scaling:\n");
 
             int lineWidth = 30;
 
@@ -115,7 +124,7 @@ public class FileManager {
     }
 
 
-    public void saveTrunkLeaves(ArrayList<Integer> data) {
+    public void saveTrunkLeavesBeforeScaling(ArrayList<Integer> data) {
         LinkedHashMap<Integer, List<Integer>> leaves = new LinkedHashMap<>();
 
         int devoted = 0;
@@ -132,7 +141,7 @@ public class FileManager {
         }
 
         try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, true)))) {
-            out.println("\nTrunk-leaves diagram:\n");
+            out.println("\nTrunk-leaves diagram before scale:\n");
 
             int length = findBiggest(leaves);
 
@@ -152,10 +161,59 @@ public class FileManager {
 
     }
 
+    public void saveTrunkLeavesAfterScaling(ArrayList<Float> data) {
+        LinkedHashMap<Integer, List<Float>> leaves = new LinkedHashMap<>();
+
+        int devoted = 0;
+
+        for (Float num : data) {
+            devoted = Math.round(num) / 10;
+            if (leaves.containsKey(devoted)) {
+                leaves.get(devoted).add(num % 10);
+            } else {
+                leaves.put(devoted, new LinkedList<>() {{
+                    add(num % 10);
+                }});
+            }
+        }
+
+        try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, true)))) {
+            out.println("\nTrunk-leaves diagram after scale:\n");
+
+            float length = findBiggestFloat(leaves);
+
+            out.println("trunk | leaves");
+            out.println("_".repeat(7) + "_".repeat(4 * (int) length));
+            for (Map.Entry<Integer, List<Float>> entry : leaves.entrySet()) {
+                out.print(String.format(" %6d |", entry.getKey()));
+                for (Float num : entry.getValue()) {
+                    out.print(String.format("%5.1f", num));
+                }
+                out.println("");
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
     public int findBiggest(LinkedHashMap<Integer, List<Integer>> leaves) {
         int biggest = 0;
 
         for (Map.Entry<Integer, List<Integer>> entry : leaves.entrySet()) {
+            if (entry.getValue().size() > biggest) {
+                biggest = entry.getValue().size();
+            }
+        }
+
+        return biggest;
+    }
+
+    public float findBiggestFloat(LinkedHashMap<Integer, List<Float>> leaves) {
+        float biggest = 0;
+
+        for (Map.Entry<Integer, List<Float>> entry : leaves.entrySet()) {
             if (entry.getValue().size() > biggest) {
                 biggest = entry.getValue().size();
             }

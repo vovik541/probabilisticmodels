@@ -60,4 +60,22 @@ public class CalculationService {
         }
         return all / data.size();
     }
+
+    public double getA(double middle) {
+        return (95 - 100) / (middle - 100);
+    }
+
+    public double getB(double a) {
+        return 100 - 100 * a;
+    }
+
+    public ArrayList<Float> scaleGrades(double a, double b, ArrayList<Integer> input) {
+        ArrayList<Float> scaled = new ArrayList<>();
+
+        for (Integer num : input) {
+            scaled.add((float) (num * a + b));
+        }
+
+        return scaled;
+    }
 }

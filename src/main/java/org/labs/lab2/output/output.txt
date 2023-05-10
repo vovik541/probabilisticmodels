@@ -8,8 +8,10 @@ Medium: 74.2
 
 Mean Square Deviation: 18.103406677565783 
 
+Scaling by: y = 0.19x + 80.62 
 
-Trunk-leaves diagram:
+
+Trunk-leaves diagram before scale:
 
 trunk | leaves
 ___________________
@@ -20,7 +22,15 @@ ___________________
     9 |   0   5
    10 |   0
 
-Box Plot:
+Trunk-leaves diagram after scale:
+
+trunk | leaves
+_______________________________________
+      8 |  8.4
+      9 |  2.6  3.2  3.4  4.2  4.2  6.9  8.1  9.0
+     10 |  0.0
+
+Box Plot before scaling:
 
  100 |            ------------------------------
   99 |                           |

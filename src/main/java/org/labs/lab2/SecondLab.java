@@ -29,8 +29,14 @@ public class SecondLab {
         double meanSquareDeviation = service.getMeanSquareDeviation(dispersion);
         fileManager.printToFile("Mean Square Deviation: ", meanSquareDeviation, true);
 
-        fileManager.saveTrunkLeaves(input);
+        double a = service.getA(medium);
+        double b = service.getB(a);
 
+        fileManager.printToFile(String.format("Scaling by: y = %2.2fx + %2.2f", a, b), true);
+        ArrayList<Float> scaled = service.scaleGrades(a, b, input);
+
+        fileManager.saveTrunkLeavesBeforeScaling(input);
+        fileManager.saveTrunkLeavesAfterScaling(scaled);
         int median = service.getMedian(input);
         fileManager.saveBoxPlot(input, median, medium, input.get(input.size() - 1), input.get(0), Q1, Q3);
 
