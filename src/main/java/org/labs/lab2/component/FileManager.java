@@ -185,7 +185,7 @@ public class FileManager {
             out.println("trunk | leaves");
             out.println("_".repeat(7) + "_".repeat(4 * (int) length));
             for (Map.Entry<Integer, List<Float>> entry : leaves.entrySet()) {
-                out.print(String.format(" %6d |", entry.getKey()));
+                out.print(String.format(" %4d |", entry.getKey()));
                 for (Float num : entry.getValue()) {
                     out.print(String.format("%5.1f", num));
                 }
