@@ -1,7 +1,5 @@
 package org.labs.lab3.component;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -63,29 +61,6 @@ public class CalculationService {
         return covariance;
     }
 
-    public double countQ(ArrayList<Integer> data, int k) {
-        int size = data.size();
-        double i = (k / 100.) * (size + 1);
-
-        return data.get((int) i - 1) + (data.get((int) i) - data.get((int) i - 1)) * (i - (int) i);
-    }
-
-    public int getMedian(ArrayList<Integer> sortedData) {
-        float relativeCumulativeFrequencies = 0;
-        float total = (float) sortedData.size();
-        int median = 0;
-
-
-        for (Integer num : sortedData) {
-            relativeCumulativeFrequencies += 1 / total;
-            if (relativeCumulativeFrequencies > 0.5) {
-                median = num;
-                System.out.println("median found by relative cumulative frequency: " + relativeCumulativeFrequencies);
-                break;
-            }
-        }
-        return median;
-    }
     public String findEquationOfRegressionLine(LinkedHashMap<Integer, LinkedList<Float>> input, int numOfData){
         float midX = findXOfGravity(input, numOfData);
         float midY = findYOfGravity(input, numOfData);
@@ -98,6 +73,24 @@ public class CalculationService {
         return String.format("y = %5.2f*x %s %2.2f", b1, (c > 0? "+" : "-" ) , c);
 
     }
+    public double findCorrelationCoefficient(LinkedHashMap<Integer, LinkedList<Float>> input, int numOfData){
+        float midX = findXOfGravity(input, numOfData);
+        float midY = findYOfGravity(input, numOfData);
+        float varX = findVarX(input, midX, numOfData);
+        float varY = findVarY(input, midY, numOfData);
+        double sX = Math.sqrt(varX);
+        double sY = Math.sqrt(varY);
+
+        float upperForm = 0;
+
+        for (Map.Entry<Integer, LinkedList<Float>> entry : input.entrySet()) {
+            for (Float num : entry.getValue()) {
+                upperForm += ((num - midX)/sX)  * ((entry.getKey() - midY) / sY);
+            }
+        }
+
+        return upperForm / (numOfData - 1);
+    }
 
     private float varX = 0;
     public float findVarX(LinkedHashMap<Integer, LinkedList<Float>> input, float midX, int numOfData){
@@ -105,44 +98,26 @@ public class CalculationService {
             float midXAbc = midX * midX;
             for (Map.Entry<Integer, LinkedList<Float>> entry : input.entrySet()) {
                 for (Float num : entry.getValue()) {
-                    varX += num * num - midXAbc;
+                    varX += num * num;
                 }
             }
-            varX = varX / numOfData;
+            varX = (varX/ numOfData) - midXAbc;
         }
         return varX;
     }
-    public double getMeanSquareDeviation(double dispersion) {
-        return Math.sqrt(dispersion);
-    }
-
-    public double countStep(LinkedHashMap<Integer, Integer> data, int count) {
-        List<Map.Entry<Integer, Integer>> entries =
-                new ArrayList<>(data.entrySet());
-
-        return (entries.get(entries.size() - 1).getKey() - entries.get(0).getKey()) / Math.sqrt(count);
-    }
-
-    public double getFixedDispersion(ArrayList<Integer> sortedData) {
-        double middle = getMedium(sortedData);
-
-        double absSum = 0;
-
-        for (Integer num : sortedData) {
-            absSum += Math.pow(num - middle, 2);
+    private float varY = 0;
+    public float findVarY(LinkedHashMap<Integer, LinkedList<Float>> input, float midY, int numOfData){
+        if (varY == 0){
+            float midYAbc = midY * midY;
+            for (Map.Entry<Integer, LinkedList<Float>> entry : input.entrySet()) {
+                for (Float num : entry.getValue()) {
+                    varY += entry.getKey() * entry.getKey();
+                }
+            }
+            varY = (varY / numOfData) - midYAbc;
         }
-
-        return absSum / (sortedData.size() - 1);
+        return varY;
     }
-
-    public double getMedium(ArrayList<Integer> data) {
-        double all = 0;
-        for (Integer num : data) {
-            all += num;
-        }
-        return all / data.size();
-    }
-
     public static <T, Q> LinkedHashMap<T, Q> reverseMap(LinkedHashMap<T, Q> toReverse) {
         LinkedHashMap<T, Q> reversedMap = new LinkedHashMap<>();
         List<T> reverseOrderedKeys = new ArrayList<>(toReverse.keySet());

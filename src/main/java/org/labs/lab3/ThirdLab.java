@@ -25,5 +25,6 @@ public class ThirdLab {
 
         String equationOfRegressionLine = service.findEquationOfRegressionLine(input, numOfData);
         fileManager.printToFile("Equation Of Regression Line : " + equationOfRegressionLine, true);
+        service.findCorrelationCoefficient(input, numOfData);
     }
 }

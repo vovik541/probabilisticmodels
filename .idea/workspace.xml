@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f3e00c0-576c-4ed1-aee1-574aaa9d2144" name="Changes" comment="removed duplicates">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/ThirdLab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/component/CalculationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/component/FileManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/input/input_10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/input/input_100.txt" afterDir="false" />
+    <list default="true" id="4f3e00c0-576c-4ed1-aee1-574aaa9d2144" name="Changes" comment="third lab tasks 1-3 done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab3/ThirdLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/ThirdLab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab3/component/CalculationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/component/CalculationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,14 +41,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/projects/probabilisticmodels/src/main/java/org/labs/lab3&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/projects/probabilisticmodels/src/main/java/org/labs/lab3",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\projects\probabilisticmodels\src\main\java\org\labs\lab3" />
@@ -146,14 +146,22 @@
       <option name="project" value="LOCAL" />
       <updated>1683713349512</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="third lab tasks 1-3 done">
+      <created>1683726377669</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683726377669</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added o more way for dispersion count" />
     <MESSAGE value="lab 2 tasks 1 2 4 5  done" />
     <MESSAGE value="removed duplicates" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed duplicates" />
+    <MESSAGE value="third lab tasks 1-3 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="third lab tasks 1-3 done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -174,9 +182,14 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/labs/lab3/ThirdLab.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/labs/lab3/component/CalculationService.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="26" />
+          <line>116</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
