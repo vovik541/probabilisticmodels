@@ -183,7 +183,7 @@ public class FileManager {
             float length = findBiggestFloat(leaves);
 
             out.println("trunk | leaves");
-            out.println("_".repeat(7) + "_".repeat(4 * (int) length));
+            out.println("_".repeat(7) + "_".repeat(5 * (int) length));
             for (Map.Entry<Integer, List<Float>> entry : leaves.entrySet()) {
                 out.print(String.format(" %4d |", entry.getKey()));
                 for (Float num : entry.getValue()) {
