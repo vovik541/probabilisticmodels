@@ -57,5 +57,5 @@ Covariance: 38.71
 Equation Of Regression Line: y =  3.70*x - -0.29 
 
 
-Correlation Coefficient: 1.0031362771987915 
+Correlation Coefficient: 0.9362605214118958 
 

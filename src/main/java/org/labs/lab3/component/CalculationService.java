@@ -92,7 +92,7 @@ public class CalculationService {
             }
         }
 
-        return upperForm / (numOfData - 1);
+        return upperForm / (numOfData);
     }
 
     private float varX = 0;

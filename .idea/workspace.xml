@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f3e00c0-576c-4ed1-aee1-574aaa9d2144" name="Changes" comment="second lab test data added">
+    <list default="true" id="4f3e00c0-576c-4ed1-aee1-574aaa9d2144" name="Changes" comment="fixed minor bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab3/component/CalculationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/component/CalculationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab3/output/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/output/output.txt" afterDir="false" />
@@ -202,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683990841826</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fixed minor bug">
+      <created>1683995207749</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683995207749</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -216,7 +223,8 @@
     <MESSAGE value="output formatted" />
     <MESSAGE value="lab 3 coefficient added. Code clean up" />
     <MESSAGE value="second lab test data added" />
-    <option name="LAST_COMMIT_MESSAGE" value="second lab test data added" />
+    <MESSAGE value="fixed minor bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed minor bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -232,9 +240,14 @@
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/labs/lab3/ThirdLab.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="54" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/labs/lab3/component/CalculationService.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/labs/lab3/component/CalculationService.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
