@@ -1,9 +1,6 @@
 package org.labs.lab2.component;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 
 public class CalculationService {
     public double countQ(ArrayList<Integer> data, int k) {
@@ -33,6 +30,7 @@ public class CalculationService {
     public double getMeanSquareDeviation(double dispersion) {
         return Math.sqrt(dispersion);
     }
+
     public double getFixedDispersion(ArrayList<Integer> sortedData) {
         double middle = getMedium(sortedData);
 

@@ -12,7 +12,7 @@ public class FileManager {
     private final String outputFile;
 
     public FileManager() {
-        this.inputFile = getFilePath("input_10.txt", "lab2\\input");
+        this.inputFile = getFilePath("input_18.txt", "lab2\\input");
         this.outputFile = getFilePath("output.txt", "lab2\\output");
     }
 
