@@ -25,7 +25,9 @@ public class ThirdLab {
         fileManager.printToFile("Covariance: ", covariance, true);
 
         String equationOfRegressionLine = service.findEquationOfRegressionLine(input, numOfData);
-        fileManager.printToFile("Equation Of Regression Line : " + equationOfRegressionLine, true);
-        service.findCorrelationCoefficient(input, numOfData);
+        fileManager.printToFile("Equation Of Regression Line: " + equationOfRegressionLine, true);
+
+        double correlationCoefficient = service.findCorrelationCoefficient(input, numOfData);
+        fileManager.printToFile("Correlation Coefficient: " + correlationCoefficient, true);
     }
 }

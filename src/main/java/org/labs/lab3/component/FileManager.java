@@ -15,7 +15,7 @@ public class FileManager {
     private final String outputFile;
 
     public FileManager() {
-        this.inputFile = getFilePath("input_100.txt", "lab3\\input");
+        this.inputFile = getFilePath("input_15.txt", "lab3\\input");
         this.outputFile = getFilePath("output.txt", "lab3\\output");
     }
 
@@ -55,15 +55,6 @@ public class FileManager {
         try (Scanner scanner = new Scanner(new File(inputFile))) {
             return scanner.nextInt();
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void printToFile(String message, double num, boolean append) {
-        try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFile, append)))) {
-
-            out.println(message + num + " \n");
-        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

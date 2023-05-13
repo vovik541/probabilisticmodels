@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f3e00c0-576c-4ed1-aee1-574aaa9d2144" name="Changes" comment="test data added for 1 lab. Code formatted">
+    <list default="true" id="4f3e00c0-576c-4ed1-aee1-574aaa9d2144" name="Changes" comment="output formatted">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab2/SecondLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab2/SecondLab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab2/component/CalculationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab2/component/CalculationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab2/component/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab2/component/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab2/output/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab2/output/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab1/output/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab1/output/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab3/ThirdLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/ThirdLab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab3/component/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/component/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab3/input/input_10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/input/input_10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/labs/lab3/output/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/labs/lab3/output/output.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +71,7 @@
       <recent name="org.labs.lab1.util" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SecondLab">
+  <component name="RunManager" selected="Application.ThirdLab">
     <configuration name="FirstLab" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.labs.lab1.FirstLab" />
       <module name="probabilisticModels" />
@@ -112,9 +113,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ThirdLab" />
         <item itemvalue="Application.SecondLab" />
         <item itemvalue="Application.FirstLab" />
-        <item itemvalue="Application.ThirdLab" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +170,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683738353603</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="lab 2 task 2 done">
+      <created>1683754116877</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683754116877</updated>
+    </task>
+    <task id="LOCAL-00008" summary="output formatted">
+      <created>1683754186217</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683754186217</updated>
+    </task>
+    <task id="LOCAL-00009" summary="output formatted">
+      <created>1683754210953</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683754210953</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -179,7 +201,9 @@
     <MESSAGE value="third lab tasks 1-3 done" />
     <MESSAGE value="third lab tasks 4 done" />
     <MESSAGE value="test data added for 1 lab. Code formatted" />
-    <option name="LAST_COMMIT_MESSAGE" value="test data added for 1 lab. Code formatted" />
+    <MESSAGE value="lab 2 task 2 done" />
+    <MESSAGE value="output formatted" />
+    <option name="LAST_COMMIT_MESSAGE" value="output formatted" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -191,7 +215,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/labs/lab3/ThirdLab.java</url>
-          <line>28</line>
+          <line>29</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -211,13 +235,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/labs/lab2/component/CalculationService.java</url>
-          <line>68</line>
+          <line>74</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/labs/lab2/component/CalculationService.java</url>
-          <line>69</line>
+          <line>75</line>
           <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/labs/lab3/component/CalculationService.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

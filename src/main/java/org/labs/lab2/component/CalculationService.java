@@ -33,14 +33,6 @@ public class CalculationService {
     public double getMeanSquareDeviation(double dispersion) {
         return Math.sqrt(dispersion);
     }
-
-    public double countStep(LinkedHashMap<Integer, Integer> data, int count) {
-        List<Map.Entry<Integer, Integer>> entries =
-                new ArrayList<>(data.entrySet());
-
-        return (entries.get(entries.size() - 1).getKey() - entries.get(0).getKey()) / Math.sqrt(count);
-    }
-
     public double getFixedDispersion(ArrayList<Integer> sortedData) {
         double middle = getMedium(sortedData);
 
