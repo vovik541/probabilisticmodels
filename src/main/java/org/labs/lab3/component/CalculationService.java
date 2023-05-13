@@ -36,7 +36,7 @@ public class CalculationService {
             float sum = 0;
 
             for (Integer num : input.keySet()) {
-                sum += num;
+                sum += num * input.get(num).size();
             }
             yOfGravity = sum / numOfData;
         }
